@@ -4,18 +4,12 @@ USE SCHEMA SCHEMA_NAME;
 SHOW STREAMS;
 
 SHOW PIPES;
-
 DESC PIPE "DATABASE_NAME"."SCHEMA_NAME"."PIPE_NAME";
+SELECT SYSTEM$PIPE_STATUS('DATABASE_NAME.SCHEMA_NAME."PIPE_NAME"');
 
 SHOW INTEGRATIONS;
 
 SHOW STAGES;
 
-SELECT SYSTEM$PIPE_STATUS('DATABASE_NAME.SCHEMA_NAME."PIPE_NAME"');
-
 SHOW TASKS;
-
-select *
-  from table(information_schema.task_history(
-    result_limit => 10,
-    task_name=>'TASK_NAME'));
+select *from table(information_schema.task_history(result_limit => 10,task_name=>'TASK_NAME'));
