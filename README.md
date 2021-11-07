@@ -1,1 +1,1 @@
-# Snowflake_queries
+# Snowflake_commands
